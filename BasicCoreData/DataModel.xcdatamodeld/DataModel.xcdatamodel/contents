@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="v1" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12C3103" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AppLaunches" representedClassName="AppLaunches" syncable="YES">
+        <attribute name="launchDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="launchID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="appStatusData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AppStatus" inverseName="appLaunches" inverseEntity="AppStatus" syncable="YES"/>
+    </entity>
+    <entity name="AppStatus" representedClassName="AppStatus" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="appLaunches" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AppLaunches" inverseName="appStatusData" inverseEntity="AppLaunches" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AppStatus" positionX="241" positionY="308" width="128" height="88"/>
+        <element name="AppLaunches" positionX="-65" positionY="189" width="128" height="88"/>
+    </elements>
+</model>
